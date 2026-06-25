@@ -1,0 +1,39 @@
+[versions]
+javaaiagent = "0.3.0"
+springboot = "4.1.0"
+jackson = "2.22.0"
+postgresql = "42.7.11"
+junit = "6.1.0"
+testcontainers = "2.0.5"
+
+[libraries]
+# java-ai-agent — the published platform (versions come from its BOM)
+agent-bom = { module = "io.github.vaiju1981:agent-bom", version.ref = "javaaiagent" }
+agent-core = { module = "io.github.vaiju1981:agent-core" }
+agent-spring-boot-starter = { module = "io.github.vaiju1981:agent-spring-boot-starter" }
+agent-langchain4j = { module = "io.github.vaiju1981:agent-langchain4j" }
+agent-store-jdbc = { module = "io.github.vaiju1981:agent-store-jdbc" }
+agent-tools-jsonschema = { module = "io.github.vaiju1981:agent-tools-jsonschema" }
+
+# Spring Boot (versions from the spring-boot BOM)
+spring-boot-bom = { module = "org.springframework.boot:spring-boot-dependencies", version.ref = "springboot" }
+spring-boot-web = { module = "org.springframework.boot:spring-boot-starter-webmvc" }
+spring-boot-actuator = { module = "org.springframework.boot:spring-boot-starter-actuator" }
+spring-boot-jdbc = { module = "org.springframework.boot:spring-boot-starter-jdbc" }
+spring-boot-flyway = { module = "org.springframework.boot:spring-boot-starter-flyway" }
+spring-boot-test = { module = "org.springframework.boot:spring-boot-starter-test" }
+spring-security-crypto = { module = "org.springframework.security:spring-security-crypto" }
+
+# Jackson, persistence, metrics
+jackson-databind = { module = "com.fasterxml.jackson.core:jackson-databind", version.ref = "jackson" }
+flyway-postgresql = { module = "org.flywaydb:flyway-database-postgresql" }
+postgresql = { module = "org.postgresql:postgresql", version.ref = "postgresql" }
+micrometer-registry-prometheus = { module = "io.micrometer:micrometer-registry-prometheus" }
+
+# Testing
+junit-bom = { module = "org.junit:junit-bom", version.ref = "junit" }
+junit-jupiter = { module = "org.junit.jupiter:junit-jupiter" }
+junit-launcher = { module = "org.junit.platform:junit-platform-launcher" }
+testcontainers-bom = { module = "org.testcontainers:testcontainers-bom", version.ref = "testcontainers" }
+testcontainers-postgresql = { module = "org.testcontainers:testcontainers-postgresql" }
+testcontainers-junit = { module = "org.testcontainers:testcontainers-junit-jupiter" }

@@ -1,0 +1,17 @@
+# Gradle
+.gradle/
+build/
+
+# Node / web build
+web/node_modules/
+web/dist/
+
+# IDE / OS
+.idea/
+*.iml
+.vscode/
+.DS_Store
+
+# Local audit output
+var/
+*.log
