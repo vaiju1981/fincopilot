@@ -1,5 +1,5 @@
 [versions]
-javaaiagent = "0.3.0"
+javaaiagent = "0.4.0"
 springboot = "4.1.0"
 jackson = "2.22.0"
 postgresql = "42.7.11"

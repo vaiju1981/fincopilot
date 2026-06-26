@@ -38,6 +38,7 @@ class LedgerIntegrationTest {
     @BeforeAll
     static void setup() {
         Flyway.configure()
+                .locations("classpath:db/fincopilot")
                 .dataSource(POSTGRES.getJdbcUrl(), POSTGRES.getUsername(), POSTGRES.getPassword())
                 .load()
                 .migrate();

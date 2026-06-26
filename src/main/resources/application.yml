@@ -14,7 +14,11 @@ spring:
       leak-detection-threshold: 10000
   flyway:
     enabled: true
-    locations: classpath:db/migration
+    # FinCopilot owns its full schema here (including a copy of the agent-store-jdbc conversation-store
+    # DDL as V1), in a location OUTSIDE the default classpath:db/migration so the library's migrations
+    # are never scanned. That keeps the app's migration version space independent, so a library migration
+    # (e.g. agent-store-jdbc's V2 idempotency table added in 0.4.0) can never collide with the app's V2+.
+    locations: classpath:db/fincopilot
   mvc:
     async:
       request-timeout: 95s

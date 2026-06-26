@@ -52,6 +52,7 @@ class AnalystLiveE2eTest {
     @BeforeAll
     static void seed() {
         Flyway.configure()
+                .locations("classpath:db/fincopilot")
                 .dataSource(POSTGRES.getJdbcUrl(), POSTGRES.getUsername(), POSTGRES.getPassword())
                 .load()
                 .migrate();
