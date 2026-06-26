@@ -70,6 +70,7 @@ class FinCopilotEvalTest {
     @BeforeAll
     static void buildAgent() {
         Flyway.configure()
+                .locations("classpath:db/fincopilot")
                 .dataSource(POSTGRES.getJdbcUrl(), POSTGRES.getUsername(), POSTGRES.getPassword())
                 .load()
                 .migrate();
